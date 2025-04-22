@@ -1,0 +1,24 @@
+{
+  "name": "mean-crud",
+  "version": "1.0.0",
+  "main": "connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahull0328/MEAN-CRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahull0328/MEAN-CRUD/issues"
+  },
+  "homepage": "https://github.com/rahull0328/MEAN-CRUD#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
