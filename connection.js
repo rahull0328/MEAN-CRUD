@@ -17,9 +17,9 @@ conn.on('connected',()=>{
 
 //creating the schema
 const userSchema = mongoose.Schema({
-  id: String,
-  name: String,
-  course: String,
+  userId: String,
+  username: String,
+  email: String,
   age: Number,
 })
 
