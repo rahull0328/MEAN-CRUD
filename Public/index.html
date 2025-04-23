@@ -7,8 +7,26 @@
     <script src="./angular.js"></script>
     <script src="./userModule.js"></script>
 </head>
-<body ng-app="userApp" ng-controller="userController">
+<body ng-app="userApp" ng-controller="userController" align="center">
     <h2>User Mangement System</h2>
-    
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+                <th>Student Age</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="items in userData track by $index">
+                <td>{{items.userId}}</td>
+                <td>{{items.username}}</td>
+                <td>{{items.email}}</td>
+                <td>{{items.age}}</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

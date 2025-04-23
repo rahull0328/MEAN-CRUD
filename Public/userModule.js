@@ -4,4 +4,10 @@ user.controller('userController', function($scope, $http){
     $scope.newData = {};
     $scope.message = "";
 
+    $scope.getUser = function () {
+        $http.get('/api/getUsers/').then((response)=>{
+            $scope.userData = response.data
+        })
+    }
+    $scope.getUser()
 })
