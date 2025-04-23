@@ -31,6 +31,15 @@ app.get('/', (req, res)=>{
   res.sendFile(__dirname+'/Public/index.html')
 })
 
+//api for reading the data from database
+app.get('/api/getUsers/', (req, res)=>{
+  user.find().then((data)=>{
+    res.send(data)
+  })
+})
+
+//api for 
+
 app.listen(3000, ()=>{
   console.log("Server running on http://127.0.0.1:3000")
 })
