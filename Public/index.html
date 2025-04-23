@@ -4,29 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./angular.js"></script>
-    <script src="./userModule.js"></script>
+    <script src="angular.js"></script>
+    <script src="studModule.js"></script>
 </head>
-<body ng-app="userApp" ng-controller="userController" align="center">
-    <h2>User Mangement System</h2>
-    <table align="center" border="1">
-        <thead>
-            <tr>
-                <th>Student Id</th>
-                <th>Student Name</th>
-                <th>Student Email</th>
-                <th>Student Age</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="items in userData track by $index">
-                <td>{{items.userId}}</td>
-                <td>{{items.username}}</td>
-                <td>{{items.email}}</td>
-                <td>{{items.age}}</td>
-            </tr>
-        </tbody>
+<body ng-app="studApp" ng-controller="studCtrl">
+    {{12+12}}
+    <table border="2">
+        <tr>
+            <td> Student ID </td>
+            <td> Student Name </td>
+            <td> Course</td>
+            <td> Age </td>
+            <td colspan="2"> Edit / Delete </td>
+        </tr>
+        <tr ng-repeat="item in studData track by $index">
+            <td> {{item.sID}} </td>
+            <td> {{item.sName}} </td>
+            <td> {{item.course}} </td>
+            <td> {{item.age}} </td>
+            <td>
+                <button type="button" ng-click="edit(item)"> Edit </button>
+            </td>
+            <td>
+                <button type="button" ng-click="studDelete(item.sID)"> Delete </button>
+            </td>
+        </tr>
     </table>
+    <form>
+        student ID : <input type="text" ng-model="newStud.sID"><br>
+        student Name : <input type="text" ng-model="newStud.sName"><br>
+        student Course : <input type="text" ng-model="newStud.course"><br>
+        student Age : <input type="text" ng-model="newStud.age"><br>
+        <button type="button" ng-click="isEdit ? studEdit(newStud) : addStud(newStud)"> {{isEdit ? 'Edit' : 'Add'}}</button>
+    <h1> Message : {{message}}</h1>
+    </form>
 </body>
 </html>
