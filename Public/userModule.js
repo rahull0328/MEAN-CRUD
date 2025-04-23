@@ -14,6 +14,7 @@ stud.controller('studCtrl',function($scope,$http){
     $scope.addStud = (stud)=>{
         $http.post('/api/addStud',stud).then((response)=>{
             $scope.message = response.data.message  
+            $scope.viewStud()
         })
     }
 
@@ -21,6 +22,7 @@ stud.controller('studCtrl',function($scope,$http){
     $scope.studDelete = (sID)=>{
         $http.delete(`/api/delete/${sID}`).then((response)=>{
             $scope.message = response.data.message
+            $scope.viewStud()
         })
     }
 
@@ -32,6 +34,7 @@ stud.controller('studCtrl',function($scope,$http){
     $scope.studEdit = (item)=>{
         $http.put(`/api/studEdit/${item.sID}`,item).then((response)=>{
             $scope.message = response.data.message
+            $scope.viewStud()
         })
     }
 })
