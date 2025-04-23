@@ -1,13 +1,37 @@
-let user = angular.module('userApp', []);
-user.controller('userController', function($scope, $http){
-    $scope.userData = [];
-    $scope.newData = {};
-    $scope.message = "";
-
-    $scope.getUser = function () {
-        $http.get('/api/getUsers/').then((response)=>{
-            $scope.userData = response.data
+let stud = angular.module('studApp',[])
+stud.controller('studCtrl',function($scope,$http){
+    $scope.studData=[]
+    $scope.newStud ={}
+    $scope.message = ""
+    $scope.viewStud = ()=>{
+        $http.get('/api/getStud').then((response)=>{
+            $scope.studData = response.data
         })
     }
-    $scope.getUser()
+    $scope.viewStud()
+
+    // Function to Add stud
+    $scope.addStud = (stud)=>{
+        $http.post('/api/addStud',stud).then((response)=>{
+            $scope.message = response.data.message  
+        })
+    }
+
+    // Function to Delete stud
+    $scope.studDelete = (sID)=>{
+        $http.delete(`/api/delete/${sID}`).then((response)=>{
+            $scope.message = response.data.message
+        })
+    }
+
+    // Edit Data
+    $scope.edit =(item)=>{
+        $scope.isEdit=true
+        $scope.newStud = item
+    }
+    $scope.studEdit = (item)=>{
+        $http.put(`/api/studEdit/${item.sID}`,item).then((response)=>{
+            $scope.message = response.data.message
+        })
+    }
 })
