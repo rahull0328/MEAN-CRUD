@@ -1,0 +1,91 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #2f3542;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table th {
+    background-color: #2ed573;
+    color: white;
+}
+
+button {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button[ng-click*="edit"] {
+    background-color: #1e90ff;
+    color: white;
+}
+
+button[ng-click*="Delete"] {
+    background-color: #ff4757;
+    color: white;
+}
+
+button[ng-click*="addStud"], button[ng-click*="studEdit"] {
+    background-color: #2ed573;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+form {
+    background-color: white;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    border: 1px solid #dcdde1;
+    border-radius: 5px;
+}
+
+.message {
+    text-align: center;
+    color: #3742fa;
+    font-size: 18px;
+    margin-top: 20px;
+}
